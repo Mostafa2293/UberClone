@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">UberClone</string>
+    <string name="user_name_hint">Please enter your username...</string>
+    <string name="password_hint">Please enter your password...</string>
+    <string name="sign_up_button">SignUp</string>
+    <string name="log_in_button">LOG IN</string>
+    <string name="rdb_passenger">Passenger</string>
+    <string name="rdb_driver">Driver</string>
+    <string name="sign_up_activity_title">SIGN UP</string>
+    <string name="log_in_activity_title">Log In</string>
+    <string name="btn_send">SEND</string>
+    <string name="edt_send">Type something here...</string>
+    <string name="login_txtview">If you want to sign up or login Anonymous...</string>
+    <string name="driver_or_passenger_hint">Are you a driver or passenger..?</string>
+    <string name="one_time_log_in_btn">ONE TIME LOGIN</string>
+    <string name="title_activity_passenger">Passenger</string>
+</resources>
