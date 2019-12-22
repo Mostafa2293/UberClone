@@ -14,4 +14,5 @@
     <string name="driver_or_passenger_hint">Are you a driver or passenger..?</string>
     <string name="one_time_log_in_btn">ONE TIME LOGIN</string>
     <string name="title_activity_passenger">Passenger</string>
+    <string name="title_activity_view_locations_map">Map</string>
 </resources>

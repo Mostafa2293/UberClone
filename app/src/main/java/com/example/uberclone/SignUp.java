@@ -45,6 +45,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                                 @Override
                                 public void done(ParseException e) {
                                     transitionToPassengerActivity();
+                                    transitionToDriverRequestListActivity();
                                 }
                             });
 
@@ -79,7 +80,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             // transition
             // ParseUser.logOut();
             transitionToPassengerActivity();
-            //transitionToDriverRequestListActivity();
+            transitionToDriverRequestListActivity();
         }
 
         btnSignUpLogin = findViewById(R.id.btnSignUpLogin);
@@ -116,7 +117,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseException e) {
                             if (e == null) {
                                 FancyToast.makeText(SignUp.this, "Signed up !", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                                //transitionToPassengerActivity();
+                                transitionToPassengerActivity();
+                                transitionToDriverRequestListActivity();
                             }
                         }
                     });
@@ -127,8 +129,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseUser user, ParseException e) {
                             if (user != null && e == null) {
                                 FancyToast.makeText(SignUp.this, "Logged in !", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-
                                 transitionToPassengerActivity();
+                                transitionToDriverRequestListActivity();
                             }
                         }
                     });
@@ -137,8 +139,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
-//    private void transitionToDriverRequestListActivity() {
-//    }
 
 
 
@@ -174,6 +174,16 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
             if (ParseUser.getCurrentUser().get("as").equals("Passenger")) {
                 Intent intent = new Intent(SignUp.this, PassengerActivity.class);
+                startActivity(intent);
+            }
+        }
+    }
+
+
+    private void transitionToDriverRequestListActivity() {
+        if(ParseUser.getCurrentUser() != null){
+            if(ParseUser.getCurrentUser().get("as").equals("Driver")){
+                Intent intent = new Intent(SignUp.this, DriverRequestListActivity.class);
                 startActivity(intent);
             }
         }
