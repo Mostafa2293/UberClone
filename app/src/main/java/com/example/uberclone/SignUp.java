@@ -1,10 +1,15 @@
 package com.example.uberclone;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -122,7 +127,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseUser user, ParseException e) {
                             if (user != null && e == null) {
                                 FancyToast.makeText(SignUp.this, "Logged in !", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                               transitionToPassengerActivity();
+
+                                transitionToPassengerActivity();
                             }
                         }
                     });
@@ -172,4 +178,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             }
         }
     }
+
+
 }
